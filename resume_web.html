@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD Faruk Hasan | Data Scientist</title>
+    <style>
+        /* Modern minimal design with refined typography */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        :root {
+            --bg: #fafafa;
+            --text: #1a1a1a;
+            --border: #e5e5e5;
+            --accent: #666;
+            --highlight: rgba(0, 0, 0, 0.05);
+        }
+        
+        body.dark-mode {
+            --bg: #121212;
+            --text: #f0f0f0;
+            --border: #333;
+            --accent: #aaa;
+            --highlight: rgba(255, 255, 255, 0.05);
+        }
+        
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.65;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            min-height: 100vh;
+            padding: 2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+            font-weight: 350;
+        }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2.5rem;
+        }
+        
+        h1 {
+            font-weight: 500;
+            font-size: 1.8rem;
+            letter-spacing: -0.02em;
+        }
+        
+        .theme-toggle {
+            background: transparent;
+            border: 1px solid var(--border);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+        
+        .theme-toggle:hover {
+            background: var(--highlight);
+        }
+        
+        .intro {
+            margin-bottom: 2.5rem;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+        
+        .intro p {
+            margin-bottom: 1.4rem;
+        }
+        
+        .inline-btn {
+            display: inline-block;
+            background: transparent;
+            border: 1px solid var(--border);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin: 0.2rem 0.2rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 400;
+        }
+        
+        .inline-btn:hover {
+            background: var(--highlight);
+        }
+        
+        .content-section {
+            display: none;
+            border-top: 1px solid var(--border);
+            padding-top: 2rem;
+            margin-top: 2rem;
+            animation: fadeIn 0.4s ease;
+        }
+        
+        .content-section.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        h2 {
+            font-weight: 500;
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.01em;
+        }
+        
+        .experience-item {
+            margin-bottom: 2.2rem;
+        }
+        
+        .experience-item h3 {
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+            font-size: 1.15rem;
+        }
+        
+        .date {
+            color: var(--accent);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        ul {
+            padding-left: 1.4rem;
+            list-style-type: none;
+        }
+        
+        li {
+            margin-bottom: 0.8rem;
+            position: relative;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+        
+        li:before {
+            content: "—";
+            position: absolute;
+            left: -1.4rem;
+            color: var(--accent);
+        }
+        
+        .project-item {
+            padding: 0.9rem 0;
+            border-bottom: 1px solid var(--border);
+            cursor: pointer;
+        }
+        
+        .project-item:last-child {
+            border-bottom: none;
+        }
+        
+        .project-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+        
+        .project-desc {
+            font-size: 0.95rem;
+            color: var(--accent);
+            margin-top: 0.7rem;
+            display: none;
+            line-height: 1.6;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+        
+        .project-links {
+            display: none;
+            margin-top: 0.8rem;
+        }
+        
+        .project-item.active .project-desc,
+        .project-item.active .project-links {
+            display: block;
+        }
+        
+        .project-link {
+            display: inline-block;
+            background: var(--highlight);
+            border: 1px solid var(--border);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-right: 0.5rem;
+            margin-top: 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: var(--text);
+            text-decoration: none;
+        }
+        
+        .project-link:hover {
+            background: rgba(0,0,0,0.08);
+        }
+        
+        .dark-mode .project-link:hover {
+            background: rgba(255,255,255,0.08);
+        }
+        
+        .contact-item {
+            padding: 0.9rem 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .contact-item:last-child {
+            border-bottom: none;
+        }
+        
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .skill-category {
+            margin-bottom: 1rem;
+        }
+        
+        .skill-category h4 {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 1.5rem;
+                font-size: 1rem;
+            }
+            
+            .intro {
+                font-size: 1.05rem;
+            }
+            
+            .inline-btn {
+                margin: 0.2rem;
+                display: inline-block;
+            }
+            
+            h1 {
+                font-size: 1.6rem;
+            }
+            
+            .skills {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="dark-mode">
+    <header>
+        <h1>MD Faruk Hasan</h1>
+        <button class="theme-toggle" id="themeToggle">
+            ☀
+        </button>
+    </header>
+    
+    <div class="intro">
+        <p>I'm a <strong>Data Scientist</strong> transforming numbers into narratives and algorithms into action. My journey spans <button class="inline-btn" data-section="experience">industry experience</button> at financial innovators, <button class="inline-btn" data-section="education">academic foundations</button> in statistical theory, and <button class="inline-btn" data-section="projects">pioneering projects</button> that drive tangible business impact.</p>
+        
+        <p>Currently crafting risk models that safeguard millions while exploring how <button class="inline-btn" data-section="research">research insights</button> can shape healthier futures. For a comprehensive view, explore my <button class="inline-btn" data-section="resume">professional resume</button> or <button class="inline-btn" data-section="contact">connect directly</button> to discuss data-driven possibilities.</p>
+    </div>
+    
+    <div id="experience" class="content-section">
+        <h2>Professional Experience</h2>
+        
+        <div class="experience-item">
+            <h3>IDLC Finance PLC</h3>
+            <div class="date">July 2023 – May 2025 | Dhaka, Bangladesh</div>
+            <p>Data Scientist, Credit Analytics, Credit Risk Management-SME</p>
+            <ul>
+                <li>Led the data analytics and BI team, developed Standard Operating Procedures (SOPs) for a data-driven business, implemented data governance for the IDLC credit analytics team</li>
+                <li>Developed and implemented a robust credit risk management model leveraging statistical and machine learning techniques (Logistic Regression/XGBoost)</li>
+                <li>Designed and maintained interactive dashboards utilizing R Shiny (Dockerized) and Power BI to deliver comprehensive insights to stakeholders</li>
+                <li>Constructed and evaluated diverse correlation models within the financial domain to effectively assess business risk</li>
+                <li>Introduced SQL to the credit analytics team and built various ETL processes to optimize the entire data workflow</li>
+                <li>Established a comprehensive credit analyst performance evaluation system disseminated automatically via email</li>
+                <li>Conducted comprehensive Carbon Footprint and sustainability analyses to assess environmental financial impact</li>
+            </ul>
+        </div>
+        
+        <div class="experience-item">
+            <h3>BIMA MILVIK</h3>
+            <div class="date">May 2022 - June 2023 | Dhaka, Bangladesh</div>
+            <p>Commercial Analyst, Planning & Analysis</p>
+            <ul>
+                <li>Prepared various reports (sales, revenue, forecast, performance) and dashboards using Power BI, Tableau, R, Python, and Excel</li>
+                <li>Developed and executed comprehensive end-to-end statistical analysis to identify key variables correlated with revenue</li>
+                <li>Developed and deployed a revenue time series forecasting model utilizing Facebook's Prophet</li>
+                <li>Designed research methodology for market surveys to predict customer behavior</li>
+                <li>Developed complete automated projects running hourly/daily to retrieve targeted potential customers using R and MySQL</li>
+                <li>Analyzed performance of sales force using DEA and SFA models</li>
+            </ul>
+        </div>
+        
+        <div class="experience-item">
+            <h3>ACI LIMITED</h3>
+            <div class="date">February 2020 - May 2022 | Dhaka, Bangladesh</div>
+            <p>Supply Chain Analyst, Corporate Supply Chain</p>
+            <ul>
+                <li>Coordinated Supply Chain KPIs, Demand, Production, and Distribution Planning for Toiletries & Hygiene Business worth 1 billion BDT</li>
+                <li>Developed Time Series Forecasting analysis using R with models (ARIMA, ETS, MLP & ELM), improving Demand Plan Accuracy by 10-15%</li>
+                <li>Analysis of Variance (ANOVA) to compare performance across suppliers and production batches</li>
+                <li>Created End-to-End Distribution Dashboard and Allocation Dashboard to maintain proper stock replenishment</li>
+                <li>Devised statistical processes to identify risk areas correlated with wrong replenishment and low production performance</li>
+                <li>Assisted in preparing and conducting S&OP meetings</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div id="education" class="content-section">
+        <h2>Education</h2>
+        
+        <div class="experience-item">
+            <h3>Jahangirnagar University</h3>
+            <div class="date">M.Sc. in Statistics | July 2022</div>
+            <p>CCPA: 3.34/4.00</p>
+            <p>Project Report: On the Evaluation of Machine Learning Models to Predict Infant Mortality in Bangladesh</p>
+            <p>Key Skills: Advanced Multivariate Analysis, Bayesian Inference, Sample Survey, Stochastic Simulation, Epidemiology, Survival Analysis</p>
+        </div>
+        
+        <div class="experience-item">
+            <h3>Jahangirnagar University</h3>
+            <div class="date">B.Sc. in Statistics | April 2019</div>
+            <p>CCPA: 3.38/4.00 | Final Two Years Average: 3.55/4.00</p>
+            <p>Key Skills: Statistical Inference, Time Series Analysis, Operations Research, Biostatistics, Quality Control</p>
+        </div>
+    </div>
+    
+    <div id="projects" class="content-section">
+        <h2>Key Projects</h2>
+        
+        <div class="project-item" onclick="this.classList.toggle('active')">
+            <div class="project-title">
+                <span>SME Loan Risk Model</span>
+                <span>+</span>
+            </div>
+            <div class="project-desc">
+                Developed machine learning model for IDLC Finance PLC vetted by IFC consultants, resulting in 6% NPL difference and reduction of 104 million BDT bad loans.
+            </div>
+            <div class="project-links">
+                <button class="project-link" onclick="window.open('https://www.idlc.com/')">Case Study</button>
+            </div>
+        </div>
+        
+        <div class="project-item" onclick="this.classList.toggle('active')">
+            <div class="project-title">
+                <span>Fraud Detection System</span>
+                <span>+</span>
+            </div>
+            <div class="project-desc">
+                Built fraud detection model and BI module for Milvik BIMA, implemented globally across 7 countries (Cambodia, Ghana, Indonesia, Pakistan, Philippines, Sri Lanka, Tanzania).
+            </div>
+            <div class="project-links">
+                <button class="project-link" onclick="window.open('https://bima.com/')">Details</button>
+            </div>
+        </div>
+        
+        <div class="project-item" onclick="this.classList.toggle('active')">
+            <div class="project-title">
+                <span>Supply Chain Forecasting</span>
+                <span>+</span>
+            </div>
+            <div class="project-desc">
+                Developed time series forecasting model for ACI Limited, improving supply chain accuracy by 10-15%, saving 110-218 million BDT.
+            </div>
+            <div class="project-links">
+                <button class="project-link" onclick="window.open('https://www.aci-bd.com/')">White Paper</button>
+            </div>
+        </div>
+        
+        <div class="project-item" onclick="this.classList.toggle('active')">
+            <div class="project-title">
+                <span>Identifying High Value Restaurants</span>
+                <span>+</span>
+            </div>
+            <div class="project-desc">
+                Implemented K-means clustering to identify high-value restaurants requiring direct supervision for a multinational food delivery organization.
+            </div>
+        </div>
+        
+        <div class="project-item" onclick="this.classList.toggle('active')">
+            <div class="project-title">
+                <span>Temperature and Rainfall Forecast</span>
+                <span>+</span>
+            </div>
+            <div class="project-desc">
+                Conducted time series analysis of temperature and rainfall patterns in Bangladesh over 100 years using statistical and neural network models.
+            </div>
+        </div>
+        
+        <div class="project-item" onclick="this.classList.toggle('active')">
+            <div class="project-title">
+                <span>Twitter Text Mining</span>
+                <span>+</span>
+            </div>
+            <div class="project-desc">
+                Keyword analysis to create word clouds and analyze word networks based on Dhaka Tribune historical data.
+            </div>
+            <div class="project-links">
+                <button class="project-link" onclick="window.open('https://farukhasan.wixsite.com/portfolio/post/the-story-of-keywords')">View Project</button>
+            </div>
+        </div>
+        
+        <div class="project-item" onclick="this.classList.toggle('active')">
+            <div class="project-title">
+                <span>Maven Space Challenge</span>
+                <span>+</span>
+            </div>
+            <div class="project-desc">
+                Interactive Power BI dashboard visualizing rocket launches into space over the years.
+            </div>
+        </div>
+        
+        <div class="project-item" onclick="this.classList.toggle('active')">
+            <div class="project-title">
+                <span>Sleeping Pattern Analysis</span>
+                <span>+</span>
+            </div>
+            <div class="project-desc">
+                Sleeping pattern analysis of Jahangirnagar University students based on Cluster Sampling.
+            </div>
+        </div>
+    </div>
+    
+    <div id="research" class="content-section">
+        <h2>Research Publication</h2>
+        
+        <div class="experience-item">
+            <h3>Prediction of Infant Mortality in Bangladesh Using SVMs</h3>
+            <div class="date">Research & Reviews: Journal of Medical and Health Sciences, 11(3), 25-33</div>
+            <ul>
+                <li>Evaluated performance of machine learning methods (Decision Trees, Random Forest, SVM) on infant mortality using Bangladesh Demographic & Health Survey Data</li>
+                <li>Software used: RStudio, R, Python, SPSS, Microsoft Excel</li>
+            </ul>
+            <button class="inline-btn" style="margin-top: 1rem;" onclick="window.open('https://www.roni.com/open-access/prediction-of-infant-mortality-in-bangladesh-using-svms.php?aid=90521')">View Publication</button>
+        </div>
+    </div>
+    
+    <div id="resume" class="content-section">
+        <h2>Professional Summary</h2>
+        
+        <div class="experience-item">
+            <h3>Data Scientist & Analytics Professional</h3>
+            <ul>
+                <li>5+ years of experience in data science across finance, healthtech, and FMCG sectors</li>
+                <li>Specialized in building machine learning models that drive business value and operational efficiency</li>
+                <li>Proven track record of delivering solutions with significant financial impact</li>
+            </ul>
+        </div>
+        
+        <h2>Core Competencies</h2>
+        <div class="skills">
+            <div class="skill-category">
+                <h4>Technical Expertise</h4>
+                <p>Machine Learning · Statistical Modeling · Data Visualization · Forecasting</p>
+            </div>
+            <div class="skill-category">
+                <h4>Technical Skills</h4>
+                <p>Python · R · SQL · Power BI · Tableau · SPSS · SAS</p>
+            </div>
+            <div class="skill-category">
+                <h4>Business Domains</h4>
+                <p>Credit Risk · Fraud Detection · Supply Chain · Healthcare Analytics</p>
+            </div>
+        </div>
+        
+        <h2>Key Achievements</h2>
+        <ul>
+            <li>Reduced bad loans by 104 million BDT through ML credit risk modeling at IDLC</li>
+            <li>Improved supply chain accuracy by 10-15% at ACI Limited, saving 110-218 million BDT</li>
+            <li>Developed fraud detection system deployed across 7 countries at Milvik BIMA</li>
+            <li>Published research on infant mortality prediction using machine learning</li>
+            <li>Developed revenue forecasting model using Facebook's Prophet at Milvik BIMA</li>
+        </ul>
+        
+        <h2>Certifications</h2>
+        <ul>
+            <li>Machine Learning with R - IBM (Cognitive AI)</li>
+            <li>MS Excel - TestDome (Top 10%)</li>
+            <li>SQL - TestDome (Top 10%)</li>
+            <li>Data Visualizations, Power BI, Advanced Excel - ACI Limited</li>
+            <li>Google Analytics for Beginners - Google</li>
+        </ul>
+        
+        <button class="inline-btn" style="margin-top: 1.5rem; display: block; width: 100%; text-align: center;" onclick="window.open('mdfarukhasan_resume_updated.pdf')">Download Full Resume PDF</button>
+    </div>
+    
+    <div id="contact" class="content-section">
+        <h2>Contact</h2>
+        
+        <div class="contact-item">
+            <div>Email</div>
+            <div>farukhasan007@gmail.com</div>
+        </div>
+        
+        <div class="contact-item">
+            <div>Phone</div>
+            <div>+8801886030291</div>
+        </div>
+        
+        <div class="contact-item">
+            <div>LinkedIn</div>
+            <div>linkedin.com/in/md-faruk-hasan-7261b4b4</div>
+        </div>
+        
+        <div class="contact-item">
+            <div>Location</div>
+            <div>Dhaka, Bangladesh</div>
+        </div>
+        
+        <div class="contact-item">
+            <div>Availability</div>
+            <div>Open to consulting opportunities and collaborations</div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2023 MD Faruk Hasan | Transforming Data into Strategic Advantage</p>
+    </footer>
+
+    <script>
+        // Set dark mode by default
+        document.body.classList.add('dark-mode');
+        
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            themeToggle.textContent = body.classList.contains('dark-mode') ? '☾' : '☀';
+        });
+        
+        // Set initial toggle icon to moon (since dark mode is default)
+        themeToggle.textContent = '☾';
+        
+        // Section toggle functionality
+        const buttons = document.querySelectorAll('.inline-btn');
+        const sections = document.querySelectorAll('.content-section');
+        
+        buttons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                if(button.hasAttribute('data-section')) {
+                    const targetSection = button.getAttribute('data-section');
+                    
+                    // Hide all sections
+                    sections.forEach(section => {
+                        section.classList.remove('active');
+                    });
+                    
+                    // Show target section
+                    document.getElementById(targetSection).classList.add('active');
+                    
+                    // Prevent default for section buttons
+                    e.preventDefault();
+                }
+            });
+        });
+        
+        // Close section when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.content-section') && 
+                !e.target.closest('.inline-btn') &&
+                !e.target.closest('.project-item') &&
+                !e.target.closest('.project-link')) {
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
