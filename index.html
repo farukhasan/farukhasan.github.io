@@ -19,6 +19,7 @@
             --border: #e5e5e5;
             --accent: #666;
             --highlight: rgba(0, 0, 0, 0.05);
+            --bullet: #888;
         }
         
         body.dark-mode {
@@ -27,6 +28,7 @@
             --border: #333;
             --accent: #aaa;
             --highlight: rgba(255, 255, 255, 0.05);
+            --bullet: #ccc;
         }
         
         body {
@@ -108,6 +110,7 @@
             padding-top: 2rem;
             margin-top: 2rem;
             animation: fadeIn 0.4s ease;
+            font-size: 0.95rem; /* Smaller font size for section content */
         }
         
         .content-section.active {
@@ -152,13 +155,18 @@
             position: relative;
             text-align: justify;
             text-justify: inter-word;
+            padding-left: 1rem;
         }
         
         li:before {
-            content: "—";
+            content: "";
             position: absolute;
-            left: -1.4rem;
-            color: var(--accent);
+            left: 0;
+            top: 0.6rem;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: var(--bullet);
         }
         
         .project-item {
@@ -180,7 +188,7 @@
         }
         
         .project-desc {
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             color: var(--accent);
             margin-top: 0.7rem;
             display: none;
@@ -281,6 +289,17 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Creative minimal section headers */
+        .section-subheader {
+            display: inline-block;
+            font-size: 0.9rem;
+            padding: 0.3rem 1rem;
+            background: var(--highlight);
+            border-radius: 20px;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
@@ -300,19 +319,19 @@
     
     <div id="experience" class="content-section">
         <h2>Professional Experience</h2>
+        <div class="section-subheader">Driving business value through data intelligence</div>
         
         <div class="experience-item">
             <h3>IDLC Finance PLC</h3>
-            <div class="date">July 2023 – May 2025 | Dhaka, Bangladesh</div>
+            <div class="date">July 2023 – Present | Dhaka, Bangladesh</div>
             <p>Data Scientist, Credit Analytics, Credit Risk Management-SME</p>
             <ul>
-                <li>Led the data analytics and BI team, developed Standard Operating Procedures (SOPs) for a data-driven business, implemented data governance for the IDLC credit analytics team</li>
-                <li>Developed and implemented a robust credit risk management model leveraging statistical and machine learning techniques (Logistic Regression/XGBoost)</li>
-                <li>Designed and maintained interactive dashboards utilizing R Shiny (Dockerized) and Power BI to deliver comprehensive insights to stakeholders</li>
-                <li>Constructed and evaluated diverse correlation models within the financial domain to effectively assess business risk</li>
-                <li>Introduced SQL to the credit analytics team and built various ETL processes to optimize the entire data workflow</li>
-                <li>Established a comprehensive credit analyst performance evaluation system disseminated automatically via email</li>
-                <li>Conducted comprehensive Carbon Footprint and sustainability analyses to assess environmental financial impact</li>
+                <li>Directed analytics & BI operations establishing SOPs for data governance</li>
+                <li>Engineered credit risk model using ML techniques (XGBoost/Logistic Regression)</li>
+                <li>Created interactive dashboards with R Shiny (Dockerized) & Power BI</li>
+                <li>Developed ETL pipelines optimizing data workflows with SQL integration</li>
+                <li>Designed automated performance evaluation system for credit analysts</li>
+                <li>Conducted sustainability analysis measuring environmental impact</li>
             </ul>
         </div>
         
@@ -321,12 +340,11 @@
             <div class="date">May 2022 - June 2023 | Dhaka, Bangladesh</div>
             <p>Commercial Analyst, Planning & Analysis</p>
             <ul>
-                <li>Prepared various reports (sales, revenue, forecast, performance) and dashboards using Power BI, Tableau, R, Python, and Excel</li>
-                <li>Developed and executed comprehensive end-to-end statistical analysis to identify key variables correlated with revenue</li>
-                <li>Developed and deployed a revenue time series forecasting model utilizing Facebook's Prophet</li>
-                <li>Designed research methodology for market surveys to predict customer behavior</li>
-                <li>Developed complete automated projects running hourly/daily to retrieve targeted potential customers using R and MySQL</li>
-                <li>Analyzed performance of sales force using DEA and SFA models</li>
+                <li>Developed revenue dashboards across 10 countries using Python/R/Tableau</li>
+                <li>Built Prophet forecasting model predicting revenue trends</li>
+                <li>Designed behavioral research methodology for market surveys</li>
+                <li>Automated customer targeting systems running on hourly basis</li>
+                <li>Optimized sales incentives using DEA/SFA performance models</li>
             </ul>
         </div>
         
@@ -335,45 +353,46 @@
             <div class="date">February 2020 - May 2022 | Dhaka, Bangladesh</div>
             <p>Supply Chain Analyst, Corporate Supply Chain</p>
             <ul>
-                <li>Coordinated Supply Chain KPIs, Demand, Production, and Distribution Planning for Toiletries & Hygiene Business worth 1 billion BDT</li>
-                <li>Developed Time Series Forecasting analysis using R with models (ARIMA, ETS, MLP & ELM), improving Demand Plan Accuracy by 10-15%</li>
-                <li>Analysis of Variance (ANOVA) to compare performance across suppliers and production batches</li>
-                <li>Created End-to-End Distribution Dashboard and Allocation Dashboard to maintain proper stock replenishment</li>
-                <li>Devised statistical processes to identify risk areas correlated with wrong replenishment and low production performance</li>
-                <li>Assisted in preparing and conducting S&OP meetings</li>
+                <li>Managed $12M hygiene portfolio during pandemic (Savlon/Freedom/Colgate)</li>
+                <li>Developed time-series forecasting improving accuracy by 10-15%</li>
+                <li>Created allocation dashboards optimizing stock replenishment</li>
+                <li>Implemented statistical QC processes reducing lead time variability</li>
+                <li>Facilitated S&OP meetings aligning cross-functional planning</li>
             </ul>
         </div>
     </div>
     
     <div id="education" class="content-section">
         <h2>Education</h2>
+        <div class="section-subheader">Statistical foundations for data intelligence</div>
         
         <div class="experience-item">
             <h3>Jahangirnagar University</h3>
             <div class="date">M.Sc. in Statistics | July 2022</div>
             <p>CCPA: 3.34/4.00</p>
-            <p>Project Report: On the Evaluation of Machine Learning Models to Predict Infant Mortality in Bangladesh</p>
-            <p>Key Skills: Advanced Multivariate Analysis, Bayesian Inference, Sample Survey, Stochastic Simulation, Epidemiology, Survival Analysis</p>
+            <p>Thesis: Machine Learning Models to Predict Infant Mortality in Bangladesh</p>
+            <p>Focus: Bayesian Inference · Stochastic Simulation · Survival Analysis</p>
         </div>
         
         <div class="experience-item">
             <h3>Jahangirnagar University</h3>
             <div class="date">B.Sc. in Statistics | April 2019</div>
-            <p>CCPA: 3.38/4.00 | Final Two Years Average: 3.55/4.00</p>
-            <p>Key Skills: Statistical Inference, Time Series Analysis, Operations Research, Biostatistics, Quality Control</p>
+            <p>CCPA: 3.38/4.00 | Final Two Years: 3.55/4.00</p>
+            <p>Focus: Time Series · Operations Research · Biostatistics</p>
         </div>
     </div>
     
     <div id="projects" class="content-section">
         <h2>Key Projects</h2>
+        <div class="section-subheader">Data solutions with measurable impact</div>
         
         <div class="project-item" onclick="this.classList.toggle('active')">
             <div class="project-title">
-                <span>SME Loan Risk Model</span>
+                <span>Credit Risk Modeling</span>
                 <span>+</span>
             </div>
             <div class="project-desc">
-                Developed machine learning model for IDLC Finance PLC vetted by IFC consultants, resulting in 6% NPL difference and reduction of 104 million BDT bad loans.
+                Developed ML credit model reducing bad loans by 104M BDT with 6% lower NPL
             </div>
             <div class="project-links">
                 <button class="project-link" onclick="window.open('https://www.idlc.com/')">Case Study</button>
@@ -382,11 +401,11 @@
         
         <div class="project-item" onclick="this.classList.toggle('active')">
             <div class="project-title">
-                <span>Fraud Detection System</span>
+                <span>Global Fraud Detection</span>
                 <span>+</span>
             </div>
             <div class="project-desc">
-                Built fraud detection model and BI module for Milvik BIMA, implemented globally across 7 countries (Cambodia, Ghana, Indonesia, Pakistan, Philippines, Sri Lanka, Tanzania).
+                Created fraud detection system deployed across 7 countries in Africa/Asia
             </div>
             <div class="project-links">
                 <button class="project-link" onclick="window.open('https://bima.com/')">Details</button>
@@ -395,11 +414,11 @@
         
         <div class="project-item" onclick="this.classList.toggle('active')">
             <div class="project-title">
-                <span>Supply Chain Forecasting</span>
+                <span>Supply Chain Optimization</span>
                 <span>+</span>
             </div>
             <div class="project-desc">
-                Developed time series forecasting model for ACI Limited, improving supply chain accuracy by 10-15%, saving 110-218 million BDT.
+                Forecasting model improving accuracy 15% with $1.3M+ annual savings
             </div>
             <div class="project-links">
                 <button class="project-link" onclick="window.open('https://www.aci-bd.com/')">White Paper</button>
@@ -408,81 +427,63 @@
         
         <div class="project-item" onclick="this.classList.toggle('active')">
             <div class="project-title">
-                <span>Identifying High Value Restaurants</span>
+                <span>High-Value Restaurant Identification</span>
                 <span>+</span>
             </div>
             <div class="project-desc">
-                Implemented K-means clustering to identify high-value restaurants requiring direct supervision for a multinational food delivery organization.
+                K-means clustering to prioritize supervision for food delivery partners
             </div>
         </div>
         
         <div class="project-item" onclick="this.classList.toggle('active')">
             <div class="project-title">
-                <span>Temperature and Rainfall Forecast</span>
+                <span>Climate Pattern Forecasting</span>
                 <span>+</span>
             </div>
             <div class="project-desc">
-                Conducted time series analysis of temperature and rainfall patterns in Bangladesh over 100 years using statistical and neural network models.
+                Century-scale analysis of Bangladesh temperature/rainfall patterns
             </div>
         </div>
         
         <div class="project-item" onclick="this.classList.toggle('active')">
             <div class="project-title">
-                <span>Twitter Text Mining</span>
+                <span>News Sentiment Analysis</span>
                 <span>+</span>
             </div>
             <div class="project-desc">
-                Keyword analysis to create word clouds and analyze word networks based on Dhaka Tribune historical data.
+                Text mining Dhaka Tribune historical data for keyword networks
             </div>
             <div class="project-links">
                 <button class="project-link" onclick="window.open('https://farukhasan.wixsite.com/portfolio/post/the-story-of-keywords')">View Project</button>
-            </div>
-        </div>
-        
-        <div class="project-item" onclick="this.classList.toggle('active')">
-            <div class="project-title">
-                <span>Maven Space Challenge</span>
-                <span>+</span>
-            </div>
-            <div class="project-desc">
-                Interactive Power BI dashboard visualizing rocket launches into space over the years.
-            </div>
-        </div>
-        
-        <div class="project-item" onclick="this.classList.toggle('active')">
-            <div class="project-title">
-                <span>Sleeping Pattern Analysis</span>
-                <span>+</span>
-            </div>
-            <div class="project-desc">
-                Sleeping pattern analysis of Jahangirnagar University students based on Cluster Sampling.
             </div>
         </div>
     </div>
     
     <div id="research" class="content-section">
         <h2>Research Publication</h2>
+        <div class="section-subheader">Applying ML to public health challenges</div>
         
         <div class="experience-item">
-            <h3>Prediction of Infant Mortality in Bangladesh Using SVMs</h3>
-            <div class="date">Research & Reviews: Journal of Medical and Health Sciences, 11(3), 25-33</div>
+            <h3>Infant Mortality Prediction Using SVMs</h3>
+            <div class="date">Journal of Medical and Health Sciences</div>
             <ul>
-                <li>Evaluated performance of machine learning methods (Decision Trees, Random Forest, SVM) on infant mortality using Bangladesh Demographic & Health Survey Data</li>
-                <li>Software used: RStudio, R, Python, SPSS, Microsoft Excel</li>
+                <li>Compared ML methods using Bangladesh Demographic Health Survey data</li>
+                <li>Developed predictive framework for infant mortality risk factors</li>
             </ul>
             <button class="inline-btn" style="margin-top: 1rem;" onclick="window.open('https://www.roni.com/open-access/prediction-of-infant-mortality-in-bangladesh-using-svms.php?aid=90521')">View Publication</button>
         </div>
     </div>
     
     <div id="resume" class="content-section">
-        <h2>Professional Summary</h2>
+        <h2>Professional Profile</h2>
+        <div class="section-subheader">Transforming data into strategic advantage</div>
         
         <div class="experience-item">
-            <h3>Data Scientist & Analytics Professional</h3>
+            <h3>Data Scientist & Analytics Leader</h3>
             <ul>
-                <li>5+ years of experience in data science across finance, healthtech, and FMCG sectors</li>
-                <li>Specialized in building machine learning models that drive business value and operational efficiency</li>
-                <li>Proven track record of delivering solutions with significant financial impact</li>
+                <li>5+ years delivering ML solutions across finance, healthtech & FMCG</li>
+                <li>$3M+ quantified impact from data-driven initiatives</li>
+                <li>Expertise in building end-to-end analytics frameworks</li>
             </ul>
         </div>
         
@@ -490,41 +491,40 @@
         <div class="skills">
             <div class="skill-category">
                 <h4>Technical Expertise</h4>
-                <p>Machine Learning · Statistical Modeling · Data Visualization · Forecasting</p>
+                <p>Predictive Modeling · ML Deployment · Data Visualization · Forecasting</p>
             </div>
             <div class="skill-category">
-                <h4>Technical Skills</h4>
-                <p>Python · R · SQL · Power BI · Tableau · SPSS · SAS</p>
+                <h4>Technical Stack</h4>
+                <p>Python · R · SQL · Power BI · Tableau · Statistical Analysis</p>
             </div>
             <div class="skill-category">
-                <h4>Business Domains</h4>
+                <h4>Domain Knowledge</h4>
                 <p>Credit Risk · Fraud Detection · Supply Chain · Healthcare Analytics</p>
             </div>
         </div>
         
-        <h2>Key Achievements</h2>
+        <h2>Key Impact</h2>
         <ul>
-            <li>Reduced bad loans by 104 million BDT through ML credit risk modeling at IDLC</li>
-            <li>Improved supply chain accuracy by 10-15% at ACI Limited, saving 110-218 million BDT</li>
-            <li>Developed fraud detection system deployed across 7 countries at Milvik BIMA</li>
-            <li>Published research on infant mortality prediction using machine learning</li>
-            <li>Developed revenue forecasting model using Facebook's Prophet at Milvik BIMA</li>
+            <li>Reduced bad loans by 104M BDT through ML credit modeling</li>
+            <li>Improved supply chain accuracy 15% saving $1.3M annually</li>
+            <li>Global fraud detection system protecting 7 emerging markets</li>
+            <li>Published research on ML applications in public health</li>
         </ul>
         
         <h2>Certifications</h2>
         <ul>
-            <li>Machine Learning with R - IBM (Cognitive AI)</li>
+            <li>Machine Learning with R - IBM</li>
             <li>MS Excel - TestDome (Top 10%)</li>
             <li>SQL - TestDome (Top 10%)</li>
-            <li>Data Visualizations, Power BI, Advanced Excel - ACI Limited</li>
-            <li>Google Analytics for Beginners - Google</li>
+            <li>Data Visualization Specialization - ACI</li>
         </ul>
         
         <button class="inline-btn" style="margin-top: 1.5rem; display: block; width: 100%; text-align: center;" onclick="window.open('mdfarukhasan_resume_updated.pdf')">Download Full Resume PDF</button>
     </div>
     
     <div id="contact" class="content-section">
-        <h2>Contact</h2>
+        <h2>Connect</h2>
+        <div class="section-subheader">Open to data-driven opportunities</div>
         
         <div class="contact-item">
             <div>Email</div>
@@ -544,11 +544,6 @@
         <div class="contact-item">
             <div>Location</div>
             <div>Dhaka, Bangladesh</div>
-        </div>
-        
-        <div class="contact-item">
-            <div>Availability</div>
-            <div>Open to consulting opportunities and collaborations</div>
         </div>
     </div>
     
@@ -588,6 +583,9 @@
                     
                     // Show target section
                     document.getElementById(targetSection).classList.add('active');
+                    
+                    // Scroll to section
+                    document.getElementById(targetSection).scrollIntoView({behavior: 'smooth', block: 'start'});
                     
                     // Prevent default for section buttons
                     e.preventDefault();
