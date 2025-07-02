@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MD Faruk Hasan | Data Scientist</title>
+    <title>Md Faruk Hasan | Data Scientist</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -99,6 +99,18 @@
             transform-origin: left;
         }
         
+        /* Enhanced toggle button */
+        .theme-toggle-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .theme-label {
+            font-size: 0.85rem;
+            color: var(--accent);
+        }
+        
         .theme-toggle {
             position: relative;
             width: 60px;
@@ -126,6 +138,7 @@
             border-radius: 50%;
             z-index: 1;
             transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         
         .theme-toggle.dark::before {
@@ -219,6 +232,7 @@
             border-color: var(--primary);
         }
         
+        /* Smaller font size for expanded sections */
         .content-section {
             display: none;
             border-top: 1px solid var(--border);
@@ -227,6 +241,7 @@
             animation: fadeIn 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
             opacity: 0;
             transform: translateY(10px);
+            font-size: 0.88rem; /* Reduced font size */
         }
         
         .content-section.active {
@@ -349,7 +364,7 @@
         }
         
         .project-desc {
-            font-size: 0.92rem;
+            font-size: 0.85rem; /* Smaller font for project descriptions */
             color: var(--accent);
             margin-top: 0.7rem;
             display: none;
@@ -409,6 +424,17 @@
             border-bottom: none;
         }
         
+        .contact-link {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-link:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+        
         .skills {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -428,6 +454,10 @@
             margin-bottom: 0.5rem;
             font-weight: 500;
             color: var(--primary);
+        }
+        
+        .skill-category p {
+            font-size: 0.88rem; /* Smaller font for skills */
         }
         
         footer {
@@ -497,10 +527,13 @@
         <div class="name-container">
             <h1>MD Faruk Hasan</h1>
         </div>
-        <button class="theme-toggle dark" id="themeToggle">
-            <i class="fas fa-sun"></i>
-            <i class="fas fa-moon"></i>
-        </button>
+        <div class="theme-toggle-container">
+            <span class="theme-label">Theme</span>
+            <button class="theme-toggle dark" id="themeToggle">
+                <i class="fas fa-sun"></i>
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
     </header>
     
     <div class="intro">
@@ -686,15 +719,15 @@
         <div class="skills">
             <div class="skill-category">
                 <h4>Technical Expertise</h4>
-                <p>Predictive Modeling · ML Deployment · Data Visualization · Forecasting</p>
+                <p>Machine Learning · Statistical Modeling · Data Visualization · Forecasting · BI Solutions · ETL Processes</p>
             </div>
             <div class="skill-category">
                 <h4>Technical Stack</h4>
-                <p>Python · R · SQL · Power BI · Tableau · Statistical Analysis</p>
+                <p>Python · R · SQL · Power BI · Tableau · RShiny · Looker Studio · SPSS · SAS · Minitab · MATLAB</p>
             </div>
             <div class="skill-category">
                 <h4>Domain Knowledge</h4>
-                <p>Credit Risk · Fraud Detection · Supply Chain · Healthcare Analytics</p>
+                <p>Credit Risk · Fraud Detection · Supply Chain · Healthcare Analytics · FMCG · Finance</p>
             </div>
         </div>
         
@@ -712,6 +745,7 @@
             <li>MS Excel - TestDome (Top 10%)</li>
             <li>SQL - TestDome (Top 10%)</li>
             <li>Data Visualization Specialization - ACI</li>
+            <li>Google Analytics for Beginners - Google</li>
         </ul>
         
         <button class="inline-btn" style="margin-top: 1.5rem; display: block; width: 100%; text-align: center;" onclick="window.open('mdfarukhasan_resume_updated.pdf')">Download Full Resume PDF</button>
@@ -723,17 +757,17 @@
         
         <div class="contact-item">
             <i class="far fa-envelope"></i>
-            <div>farukhasan007@gmail.com</div>
+            <a href="mailto:farukhasan007@gmail.com" class="contact-link">farukhasan007@gmail.com</a>
         </div>
         
         <div class="contact-item">
             <i class="fas fa-phone"></i>
-            <div>+8801886030291</div>
+            <a href="tel:+8801886030291" class="contact-link">+8801886030291</a>
         </div>
         
         <div class="contact-item">
             <i class="fab fa-linkedin-in"></i>
-            <div>linkedin.com/in/md-faruk-hasan-7261b4b4</div>
+            <a href="https://www.linkedin.com/in/md-faruk-hasan-7261b4b4" target="_blank" class="contact-link">linkedin.com/in/md-faruk-hasan-7261b4b4</a>
         </div>
         
         <div class="contact-item">
@@ -743,7 +777,7 @@
     </div>
     
     <footer>
-        <p>© 2023 MD Faruk Hasan | Transforming Data into Strategic Advantage</p>
+        <p>© Last Updated 2025-July-02 | Transforming Data into Strategic Advantage</p>
     </footer>
 
     <script>
