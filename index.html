@@ -492,6 +492,61 @@
             font-weight: 500;
         }
         
+        /* New styles for requested changes */
+        .company-link {
+            color: var(--primary);
+            text-decoration: none;
+            position: relative;
+        }
+        
+        .company-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: currentColor;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+        
+        .company-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        
+        .position-title {
+            margin: 0.8rem 0;
+            display: block;
+        }
+        
+        .favorites-container {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            margin-top: 1.5rem;
+        }
+        
+        .favorite-item {
+            padding: 0.5rem 0;
+            display: flex;
+            border-bottom: 1px dashed var(--border);
+        }
+        
+        .favorite-item:last-child {
+            border-bottom: none;
+        }
+        
+        .favorite-label {
+            font-weight: 500;
+            width: 160px;
+            flex-shrink: 0;
+            color: var(--primary);
+        }
+        
         @media (max-width: 768px) {
             body {
                 padding: 1.5rem;
@@ -519,6 +574,10 @@
                 width: 50px;
                 height: 26px;
             }
+            
+            .favorite-label {
+                width: 130px;
+            }
         }
     </style>
 </head>
@@ -538,32 +597,87 @@
     <div class="intro">
         <p>I'm a <strong>Data Scientist</strong> transforming numbers into narratives and algorithms into action. My journey spans <button class="inline-btn" data-section="experience">industry experience</button> at financial innovators, <button class="inline-btn" data-section="education">academic foundations</button> in statistical theory, and <button class="inline-btn" data-section="projects">pioneering projects</button> that drive tangible business impact.</p>
         
-        <p>Currently crafting risk models that safeguard millions while exploring how <button class="inline-btn" data-section="research">research insights</button> can shape healthier futures. For a comprehensive view, explore my <button class="inline-btn" data-section="resume">professional resume</button> or <button class="inline-btn" data-section="contact">connect directly</button> to discuss data-driven possibilities.</p>
+        <p>Currently crafting risk models that safeguard millions while exploring how <button class="inline-btn" data-section="research">research insights</button> can shape healthier futures. Beyond data, I have <button class="inline-btn" data-section="favorites">personal favorites</button> that shape my technical approach. For a comprehensive view, explore my <button class="inline-btn" data-section="resume">professional resume</button> or <button class="inline-btn" data-section="contact">connect directly</button> to discuss data-driven possibilities.</p>
+    </div>
+    
+    <!-- New Favorites Section -->
+    <div id="favorites" class="content-section">
+        <h2>Personal Favorites</h2>
+        <div class="section-subheader">Tools and inspirations that shape my workflow</div>
+        
+        <div class="favorites-container">
+            <div class="favorite-item">
+                <span class="favorite-label">Favorite IDE:</span>
+                <span>VSCode → Positron</span>
+            </div>
+            <div class="favorite-item">
+                <span class="favorite-label">Favorite Language:</span>
+                <span>R → Python</span>
+            </div>
+            <div class="favorite-item">
+                <span class="favorite-label">Favorite OS:</span>
+                <span>Windows → Linux</span>
+            </div>
+            <div class="favorite-item">
+                <span class="favorite-label">Favorite Font:</span>
+                <span>Cambria & Fira Code</span>
+            </div>
+            <div class="favorite-item">
+                <span class="favorite-label">Favorite Movie:</span>
+                <span>Dead Poets Society & Whiplash</span>
+            </div>
+            <div class="favorite-item">
+                <span class="favorite-label">Favorite Artist:</span>
+                <span>Pink Floyd</span>
+            </div>
+        </div>
     </div>
     
     <div id="experience" class="content-section">
         <h2>Professional Experience</h2>
         <div class="section-subheader">Driving business value through data intelligence</div>
         
+        <!-- New DBH Finance Experience -->
         <div class="experience-item">
-            <h3>IDLC Finance PLC</h3>
+            <h3><a href="https://www.dbh.com.bd/" class="company-link">DBH Finance PLC</a></h3>
             <div class="date"><i class="far fa-calendar-alt"></i> July 2023 – Present | Dhaka, Bangladesh</div>
-            <p>Data Scientist, Credit Analytics, Credit Risk Management-SME</p>
+            <span class="position-title">Data Science Manager</span>
             <ul>
-                <li>Directed analytics & BI operations establishing SOPs for data governance</li>
-                <li>Engineered credit risk model using ML techniques (XGBoost/Logistic Regression)</li>
-                <li>Created interactive dashboards with R Shiny (Dockerized) & Power BI</li>
-                <li>Developed ETL pipelines optimizing data workflows with SQL integration</li>
-                <li>Designed automated performance evaluation system for credit analysts</li>
-                <li>Conducted sustainability analysis measuring environmental impact</li>
+                <li>Building enterprise analytics infrastructure to enable real-time decision making across departments</li>
+                <li>Developing advanced credit risk models using machine learning techniques to optimize lending decisions</li>
+                <li>Implementing LLM-powered solutions for document processing, customer insights, and operational efficiency</li>
+            </ul>
+        </div>
+        
+        <!-- Split IDLC Experience -->
+        <div class="experience-item">
+            <h3><a href="https://www.idlc.com/" class="company-link">IDLC Finance PLC</a></h3>
+            <div class="date"><i class="far fa-calendar-alt"></i> January 2022 – June 2023 | Dhaka, Bangladesh</div>
+            <span class="position-title">Lead Data Scientist, Credit Analytics</span>
+            <ul>
+                <li>Managed team of data analysts and established data governance frameworks</li>
+                <li>Developed predictive models for credit risk assessment using XGBoost and ensemble methods</li>
+                <li>Created automated performance dashboards for executive decision making</li>
+            </ul>
+        </div>
+        
+        <div class="experience-item">
+            <h3><a href="https://www.idlc.com/" class="company-link">IDLC Finance PLC</a></h3>
+            <div class="date"><i class="far fa-calendar-alt"></i> July 2020 – December 2021 | Dhaka, Bangladesh</div>
+            <span class="position-title">Data Scientist, Credit Risk Management-SME</span>
+            <ul>
+                <li>Engineered ETL pipelines for credit data integration from multiple sources</li>
+                <li>Developed early-warning system for non-performing loans using survival analysis</li>
+                <li>Created interactive dashboards with R Shiny (Dockerized) for portfolio monitoring</li>
             </ul>
             <div class="impact-badge">Reduced bad loans by 104M BDT</div>
         </div>
         
+        <!-- Existing Experiences with Company Links -->
         <div class="experience-item">
-            <h3>BIMA MILVIK</h3>
+            <h3><a href="https://bima.com/" class="company-link">BIMA MILVIK</a></h3>
             <div class="date"><i class="far fa-calendar-alt"></i> May 2022 - June 2023 | Dhaka, Bangladesh</div>
-            <p>Commercial Analyst, Planning & Analysis</p>
+            <span class="position-title">Commercial Analyst, Planning & Analysis</span>
             <ul>
                 <li>Developed revenue dashboards across 10 countries using Python/R/Tableau</li>
                 <li>Built Prophet forecasting model predicting revenue trends</li>
@@ -575,9 +689,9 @@
         </div>
         
         <div class="experience-item">
-            <h3>ACI LIMITED</h3>
+            <h3><a href="https://www.aci-bd.com/" class="company-link">ACI LIMITED</a></h3>
             <div class="date"><i class="far fa-calendar-alt"></i> February 2020 - May 2022 | Dhaka, Bangladesh</div>
-            <p>Supply Chain Analyst, Corporate Supply Chain</p>
+            <span class="position-title">Supply Chain Analyst, Corporate Supply Chain</span>
             <ul>
                 <li>Managed $12M hygiene portfolio during pandemic (Savlon/Freedom/Colgate)</li>
                 <li>Developed time-series forecasting improving accuracy by 10-15%</li>
@@ -589,6 +703,7 @@
         </div>
     </div>
     
+    <!-- Rest of the sections remain unchanged -->
     <div id="education" class="content-section">
         <h2>Education</h2>
         <div class="section-subheader">Statistical foundations for data intelligence</div>
