@@ -574,6 +574,18 @@
                 width: 50px;
                 height: 26px;
             }
+
+            .sub-heading {
+  font-weight: 500;
+  font-size: 1.25rem;
+  margin: 2rem 0 1rem 0;
+  letter-spacing: -0.01em;
+  color: var(--primary);
+}
+
+.research-sub-section:not(:first-child) {
+  margin-top: 2.5rem;
+}
             
             .favorite-label {
                 width: 130px;
@@ -878,47 +890,49 @@
   <h2>Research & Publication</h2>
   <div class="section-subheader">Applying ML to public-health challenges & academic collaborations</div>
 
+  <!-- ===== 1.  Research Experience ===== -->
+  <div class="research-sub-section">
+    <h3 class="sub-heading">Research Experience</h3>
 
+    <div class="experience-item">
+      <h4>Research Assistant – ARLAB</h4>
+      <div class="date"><i class="far fa-calendar-alt"></i> 2021 – 2022 | Winnipeg, MB, Canada</div>
+      <div class="position-title">with Associate Professor Azizur Rahman</div>
+      <div class="position-title">Program Evaluator (Mixed Methods) – Social Innovation Office, Department of Families, Government of Manitoba, Canada</div>
+      <ul>
+        <li>Constructed a Multiview Stacking Framework through the implementation and integration of multiple machine-learning and AI algorithms, systematically combining model outputs, coordinating inter-algorithm interactions, and optimizing prediction-aggregation mechanisms to evaluate performance across layered algorithmic structures.</li>
+        <li>Conducted research on Continuous-time Markov Chain structures for longitudinal processes, specifying transition-probability matrices, deriving infinitesimal generators, estimating sojourn distributions, computing likelihoods for censored temporal sequences, and analyzing stochastic state evolution across multiple observation intervals.</li>
+      </ul>
+      <div class="impact-badge">Multiview Stacking, Ensemble Learning, Continuous-time Markov Chain, Longitudinal Data</div>
+    </div>
 
-    
-        
-  <!-- 1.  Research Experience part -->
-  <div class="experience-item">
-    <h3>Research Assistant – ARLAB</h3>
-    <div class="date"><i class="far fa-calendar-alt"></i> 2025 – 2026 | Winnipeg, MB, Canada</div>
-    <span class="position-title">with Associate Professor Azizur Rahman</span>
-      <span class="position-title">Program Evaluator (Mixed Methods) – Social Innovation Office, Department of Families, Government of Manitoba, Canada</span>
-    <ul>
-      <li>Constructed a Multiview Stacking Framework through the implementation and integration of multiple machine-learning and AI algorithms, systematically combining model outputs, coordinating inter-algorithm interactions, and optimizing prediction-aggregation mechanisms to evaluate performance across layered algorithmic structures.</li>
-      <li>Conducted research on Continuous-time Markov Chain structures for longitudinal processes, specifying transition-probability matrices, deriving infinitesimal generators, estimating sojourn distributions, computing likelihoods for censored temporal sequences, and analyzing stochastic state evolution across multiple observation intervals.</li>
-    </ul>
-    <div class="impact-badge">Multiview Stacking, Ensemble Learning, Continuous-time Markov Chain, Longitudinal Data</div>
+    <div class="experience-item">
+      <h4>Research Assistant – Jahangirnagar University</h4>
+      <div class="date"><i class="far fa-calendar-alt"></i> 2020 – 2021 | Dhaka, Bangladesh</div>
+      <div class="position-title">under Dr. Rumana Rois, Professor & Department Chair, Department of Statistics and Data Science</div>
+      <ul>
+        <li>Analysed and evaluated Support Vector Machines (SVMs) and other machine-learning models (Decision Trees, Random Forests) using RStudio, R, Python, SPSS, and Excel to predict infant mortality in Bangladesh, assessing model performance and contributing to a peer-reviewed publication: Rois, R., Hasan, F., & Yasmin, M. N. (2022). Research & Reviews: Journal of Medical and Health Sciences, 11(3), 25-33.</li>
+      </ul>
+      <div class="impact-badge">Support Vector Machine, ML, Infant Mortality, Bangladesh Demographic and Health Survey, Random Forest</div>
+    </div>
   </div>
 
-  <div class="experience-item">
-    <h3>Research Assistant – Jahangirnagar University</h3>
-    <div class="date"><i class="far fa-calendar-alt"></i> 2020 – 2021 | Dhaka, Bangladesh</div>
-    <span class="position-title">under Dr. Rumana Rois, Professor & Department Chair, Department of Statistics and Data Science</span>
-    <ul>
-      <li>Analysed and evaluated Support Vector Machines (SVMs) and other machine-learning models (Decision Trees, Random Forests) using RStudio, R, Python, SPSS, and Excel to predict infant mortality in Bangladesh, assessing model performance and contributing to a peer-reviewed publication: Rois, R., Hasan, F., & Yasmin, M. N. (2022). Research & Reviews: Journal of Medical and Health Sciences, 11(3), 25-33.</li>
-    </ul>
-    <div class="impact-badge">Support Vector Machine, ML, Infant Mortality, Bangladesh Demographic and Health Survey, Random Forest</div>
-  </div>
+  <!-- ===== 2.  Publication ===== -->
+  <div class="research-sub-section">
+    <h3 class="sub-heading">Publication</h3>
 
-
-     <!-- 2.  Already-published paper part -->
-  <div class="experience-item">
-    <h3>Infant Mortality Prediction Using SVMs</h3>
-    <div class="date"><i class="far fa-newspaper"></i> Research & Reviews: Journal of Medical and Health Sciences</div>
-    <ul>
-      <li>Compared ML methods using Bangladesh Demographic Health Survey data</li>
-      <li>Find out the major reasons for Infant Mortality in Bangladesh e.g., Husband/partner’s education level and occupation</li>
-      <li>Developed predictive framework for infant mortality risk factors</li>
-    </ul>
-    <button class="inline-btn" style="margin-top: 1rem;" onclick="window.open('https://www.rroij.com/open-access/prediction-of-infant-mortality-in-bangladesh-using-svms.pdf')">View Publication</button>
+    <div class="experience-item">
+      <h4>Infant Mortality Prediction Using SVMs</h4>
+      <div class="date"><i class="far fa-newspaper"></i> Research & Reviews: Journal of Medical and Health Sciences</div>
+      <ul>
+        <li>Compared ML methods using Bangladesh Demographic Health Survey data</li>
+        <li>Identified major drivers of infant mortality in Bangladesh (e.g., husband/partner’s education level and occupation)</li>
+        <li>Developed predictive framework for infant-mortality risk factors</li>
+      </ul>
+      <button class="inline-btn" style="margin-top: 1rem;" onclick="window.open('https://www.rroij.com/open-access/prediction-of-infant-mortality-in-bangladesh-using-svms.pdf')">View Publication</button>
+    </div>
   </div>
 </div>
-
  
     
     <div id="resume" class="content-section">
