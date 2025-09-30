@@ -586,6 +586,9 @@
 .research-sub-section:not(:first-child) {
   margin-top: 2.5rem;
 }
+            .sub-heading + .experience-item {   /* first card after each heading */
+  margin-top: 0.6rem;               /* tweak as needed */
+}
             
             .favorite-label {
                 width: 130px;
@@ -890,6 +893,24 @@
   <h2>Research & Publication</h2>
   <div class="section-subheader">Applying ML to public-health challenges & academic collaborations</div>
 
+
+  <!-- ===== 2.  Publication ===== -->
+  <div class="research-sub-section">
+    <h3 class="sub-heading">Publication</h3>
+
+    <div class="experience-item">
+      <h4>Infant Mortality Prediction Using SVMs</h4>
+      <div class="date"><i class="far fa-newspaper"></i> Research & Reviews: Journal of Medical and Health Sciences</div>
+      <ul>
+        <li>Compared ML methods using Bangladesh Demographic Health Survey data</li>
+        <li>Identified major drivers of infant mortality in Bangladesh (e.g., husband/partner’s education level and occupation)</li>
+        <li>Developed predictive framework for infant-mortality risk factors</li>
+      </ul>
+      <button class="inline-btn" style="margin-top: 1rem;" onclick="window.open('https://www.rroij.com/open-access/prediction-of-infant-mortality-in-bangladesh-using-svms.pdf')">View Publication</button>
+    </div>
+  </div>
+</div>
+
   <!-- ===== 1.  Research Experience ===== -->
   <div class="research-sub-section">
     <h3 class="sub-heading">Research Experience</h3>
@@ -917,22 +938,7 @@
     </div>
   </div>
 
-  <!-- ===== 2.  Publication ===== -->
-  <div class="research-sub-section">
-    <h3 class="sub-heading">Publication</h3>
 
-    <div class="experience-item">
-      <h4>Infant Mortality Prediction Using SVMs</h4>
-      <div class="date"><i class="far fa-newspaper"></i> Research & Reviews: Journal of Medical and Health Sciences</div>
-      <ul>
-        <li>Compared ML methods using Bangladesh Demographic Health Survey data</li>
-        <li>Identified major drivers of infant mortality in Bangladesh (e.g., husband/partner’s education level and occupation)</li>
-        <li>Developed predictive framework for infant-mortality risk factors</li>
-      </ul>
-      <button class="inline-btn" style="margin-top: 1rem;" onclick="window.open('https://www.rroij.com/open-access/prediction-of-infant-mortality-in-bangladesh-using-svms.pdf')">View Publication</button>
-    </div>
-  </div>
-</div>
  
     
     <div id="resume" class="content-section">
